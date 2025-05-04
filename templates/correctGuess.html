@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content%}
+<main class="correct-main">
+    <h1 class="city-title"></h1>
+    <h2>apraksts</h2>
+    <p class="city-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati officia pariatur dolore illo
+        ex. Consequuntur enim, nulla perspiciatis rem sequi perferendis debitis ratione cum, vel ut consectetur deserunt
+        nobis delectus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae magni, quas, ea eaque nulla
+        assumenda, porro autem modi distinctio fugiat dolor pariatur reprehenderit nisi sequi soluta illum dignissimos
+        repellendus adipisci.</p>
+    <div class="infographic">
+        <img class="correct-img" src="{{ url_for('static', filename='images/cities/riga.jpg') }}" alt="city">
+    </div>
+</main>
+<div class="correct-score-container">Punkti: <span class="correct-score">4200</span></div>
+<button class="round-button" onclick="window.location.href='/game'">Nākamais raunds</button>
+
+<script src="{{url_for('static', filename='correctGuess.js')}}" defer></script>
+{%endblock%}

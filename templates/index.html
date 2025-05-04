@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content%}
+    <div class="home-main">
+        <h1 class="main-title">Latvia<span style="color: rgb(56, 190, 248);">Guessr</span></h1>
+        <button class="play-btn" onclick="window.location.href='/game'">Spēlēt 🞂</button>
+    </div>
+
+
+    <script>
+        localStorage.setItem('totalScore', 0);
+        localStorage.setItem('roundCount', 1);
+    </script>
+{%endblock%}

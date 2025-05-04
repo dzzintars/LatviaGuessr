@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e2e8f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+/* home file (index) */
+.home-main {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-title {
+    font-size: 120px;
+    margin: 30px;
+    font-weight: 800;
+}
+
+.play-btn {
+    background-color: #1d4ed8;
+    box-shadow: 5px 5px rgb(82 82 82);
+    border-radius: 10px;
+    width: 480px;
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+    padding: 6px 50px;
+}
+
+
+
+/* game file */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.game-title {
+    margin: 0 30px;
+    font-size: 44px;
+    font-weight: 700;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    width: 490px;
+    padding: 0px 40px;
+    border-radius: 0 0 0 40px;
+    background-image: linear-gradient(to top right, #ec4899, #eab308);
+}
+
+.stat-para {
+    color:white;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.game-content {
+    margin: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.game-img {
+    width: 50%;
+    align-self: flex-start;
+    height: auto;  
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.guess-box {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex: 1;
+    background-color: #eff4f9;
+    border-radius: 12px;
+}
+
+
+.city-input {
+    padding: 12px 18px;
+    font-size: 27px;
+    margin: 20px 0px;
+    border-radius: 14px;
+    border: solid 1px gray;
+}
+
+.table {
+    padding: 5px;
+}
+
+.guess-header,
+.guess-row {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    padding: 8px 2px;
+    text-align: center;
+    align-items: center;
+}
+
+.guess-header {
+    font-weight: bold;
+    font-size: 26px;
+    border-bottom: 2px solid #000;
+}
+
+.minejums {
+    font-size: 24px;
+    border-right: solid 2px gray;
+    font-weight: 600;
+    padding: 12px 0;
+}
+
+.guess-row {
+    background-color: white;
+    font-size: 20px;
+    margin: 10px 0px;
+    padding: 10px 2px;
+    border-radius: 12px;
+}
+
+.guess-count-para {
+    text-align: right;
+    color:rgb(54, 54, 54);
+    font-size: 22px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    width: 270px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: 0px;
+    background-image: linear-gradient(to top right, #ec4899, #eab308);
+}
+
+.guess-count {
+    color: white;
+    font-size: 30px;
+}
+
+.correct-region, .correct-county, .incorrect-county,.incorrect-region {
+    padding: 14px 20px;
+    margin:  5px 15px;
+    border-radius: 12px;
+}
+
+.correct-county,.correct-region {
+    background-color: #22c55e;
+}
+
+.incorrect-county, .incorrect-region {
+    background-color: #b4b5b6;
+}
+
+
+/* Correct guess */
+.correct-main {
+    padding: 20px;
+}
+
+.correct-img {
+    height: 400px;
+    border-radius: 12px;
+}
+
+
+/* Results page */
+

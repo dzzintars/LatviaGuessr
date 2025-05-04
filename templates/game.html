@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+{% block content%}
+<header class="header">
+    <h1 class="game-title">Latvia<span style="color: rgb(56, 190, 248);">Guessr</span></h1>
+    <div class="game-stats">
+        <p class="stat-para">Raunds <span class="round">0</span>/3</p>
+        <p class="stat-para">Punkti <span class="score">0</span></p>
+    </div>
+</header>
+<main>
+    <div class="game-content">
+        <img class='game-img' src="{{ url_for('static', filename='images/cities/' ~ cities[id]['picture']) }}" alt="">
+        <div class="guess-box">
+            <input type="text" class="city-input" placeholder="Mini pilsētu">
+            <div class="table">
+                <div class="guess-header">
+                    <div style="border-right: solid 2px gray;">Minējums</div>
+                    <div>Reģions</div>
+                    <div>Novads</div>
+                    <div>Iedzīvotāji</div>
+                    <div>Virziens</div>
+                </div>
+                <div class="guesses-table"></div>
+            </div>
+            <p class="guess-count-para">Minējumi atlikuši: <span class="guess-count">5</span></p>
+        </div>
+    </div>
+</main>
+
+<script>
+    localStorage.setItem('cities', '{{ cities | tojson }}');
+    localStorage.setItem('ansId', JSON.parse('{{ id | tojson }}'));
+</script>
+<script src="{{url_for('static', filename='game.js')}}" defer></script>
+{%endblock%}
