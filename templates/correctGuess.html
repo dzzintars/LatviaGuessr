@@ -3,18 +3,18 @@
 {% block content%}
 <main class="correct-main">
     <h1 class="city-title"></h1>
-    <h2>apraksts</h2>
-    <p class="city-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati officia pariatur dolore illo
-        ex. Consequuntur enim, nulla perspiciatis rem sequi perferendis debitis ratione cum, vel ut consectetur deserunt
-        nobis delectus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae magni, quas, ea eaque nulla
-        assumenda, porro autem modi distinctio fugiat dolor pariatur reprehenderit nisi sequi soluta illum dignissimos
-        repellendus adipisci.</p>
+    <h2 style="font-size: 34px; margin: 4px 0;">Apraksts</h2>
+    <p class="city-desc"></p>
     <div class="infographic">
-        <img class="correct-img" src="{{ url_for('static', filename='images/cities/riga.jpg') }}" alt="city">
+        <iframe class="map" width="360" height="360" src="" style="border: 1px solid black"></iframe><br />
+        <img src="" alt="city" class="correct-img">
     </div>
 </main>
-<div class="correct-score-container">Punkti: <span class="correct-score">4200</span></div>
-<button class="round-button" onclick="window.location.href='/game'">Nākamais raunds</button>
+<div class="guess-score-box">
+    <div class="total-score-container">Punkti: <span class="correct-score">4200</span></div>
+    <button class="round-button" onclick="window.location.href='/game'"><span class="flip-text">Nākamais raunds</span></button>
+</div>
+
 
 <script src="{{url_for('static', filename='correctGuess.js')}}" defer></script>
 {%endblock%}

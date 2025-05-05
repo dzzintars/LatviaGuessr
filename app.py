@@ -17,7 +17,7 @@ def game():
     cur = conn.cursor()
     rows = cur.execute(
         """
-        SELECT cities.id, city, picture, regions.region_name, counties.county_name, coordinates, population FROM cities 
+        SELECT cities.id, city, picture, regions.region_name, counties.county_name, coordinates, population, description FROM cities 
         INNER JOIN regions ON cities.region_id = regions.id
         INNER JOIN counties ON cities.county_id = counties.id;
         """

@@ -18,22 +18,29 @@ body {
 }
 
 .main-title {
-    font-size: 120px;
-    margin: 30px;
+    font-size: 150px;
+    margin: 60px;
     font-weight: 800;
 }
 
 .play-btn {
-    background-color: #1d4ed8;
+    background-image: linear-gradient(to top right, #ec4899, #eab308);
     box-shadow: 5px 5px rgb(82 82 82);
-    border-radius: 10px;
+    border-radius: 26px;
     width: 480px;
-    font-size: 50px;
+    font-size: 70px;
     font-weight: 700;
     color: white;
-    padding: 6px 50px;
+    padding: 18px 50px;
 }
 
+.play-btn:hover {
+    background-image: linear-gradient(to top right, #be2e75, #c79a06);
+}
+
+.play-btn:hover .flip-text {
+    transform: rotateX(360deg);
+}
 
 
 /* game file */
@@ -60,7 +67,7 @@ body {
 }
 
 .stat-para {
-    color:white;
+    color: white;
     font-size: 30px;
     margin: 10px;
 }
@@ -69,13 +76,14 @@ body {
     margin: 50px 20px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 60px;
 }
 
 .game-img {
-    width: 50%;
+    width: 48%;
     align-self: flex-start;
-    height: auto;  
+    height: auto;
     border-radius: 16px;
     object-fit: cover;
 }
@@ -126,7 +134,7 @@ body {
 
 .guess-row {
     background-color: white;
-    font-size: 20px;
+    font-size: 18px;
     margin: 10px 0px;
     padding: 10px 2px;
     border-radius: 12px;
@@ -134,7 +142,7 @@ body {
 
 .guess-count-para {
     text-align: right;
-    color:rgb(54, 54, 54);
+    color: rgb(32, 32, 32);
     font-size: 22px;
     padding: 5px 10px;
     border-radius: 12px;
@@ -150,31 +158,181 @@ body {
     font-size: 30px;
 }
 
-.correct-region, .correct-county, .incorrect-county,.incorrect-region {
+.correct-region,
+.correct-county,
+.incorrect-county,
+.incorrect-region {
     padding: 14px 20px;
-    margin:  5px 15px;
+    margin: 5px 15px;
     border-radius: 12px;
 }
 
-.correct-county,.correct-region {
+.correct-county,
+.correct-region {
     background-color: #22c55e;
 }
 
-.incorrect-county, .incorrect-region {
+.incorrect-county,
+.incorrect-region {
     background-color: #b4b5b6;
 }
 
+.title-link {
+    text-decoration: none;
+    color: black;
+}
 
 /* Correct guess */
 .correct-main {
     padding: 20px;
+    width: 60%;
+    margin: auto auto;
+}
+
+.city-title {
+    font-size: 92px;
+    margin: 20px 0;
+    background-image: linear-gradient(to top right, #ec4899, #eab308);
+    border-radius: 18px;
+    padding: 2px 27px 12px;
+    text-align: center;
+}
+
+.city-desc {
+    margin: 0 0 30px;
+}
+
+.infographic {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
 }
 
 .correct-img {
-    height: 400px;
-    border-radius: 12px;
+    height: 360px;
+    border-radius: 20px;
 }
 
+.map {
+    border-radius: 20px;
+}
+
+.guess-score-box {
+    position: fixed;
+    display: flex;
+    height: 220px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1000;
+    box-shadow: 0 -0.5px 0 rgba(100, 116, 139, 0.5);
+}
+
+.total-score-container {
+    font-size: 70px;
+    margin-top: 10px;
+    color: #64748b;
+    font-weight: bold;
+}
+
+.correct-score {
+    margin-left: 90px;
+    font-size: 50;
+    color: black;
+}
+
+.round-button {
+    background-image: linear-gradient(to top right, #ec4899, #eab308);
+    padding: 16px 40px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    border-radius: 25px;
+    border: 0;
+    box-shadow: 5px 5px rgb(82 82 82);
+    margin: 0px 0 20px;
+}
+
+.round-button:hover {
+    background-image: linear-gradient(to top right, #be2e75, #c79a06);
+}
+
+.round-button:hover .flip-text {
+    transform: rotateX(360deg);
+}
 
 /* Results page */
 
+.results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-title {
+    font-size: 9vw;
+    background: linear-gradient(to right, rgb(231, 43, 137), #eab308);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 170px auto 20px;
+    letter-spacing: -4px;
+}
+
+.results-box {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.results-text {
+    font-size: 6vw;
+    margin: 20px;
+    color: #25bafa;
+    font-weight: bolder;
+    letter-spacing: -2px;
+}
+
+.result-score {
+    font-size: 5vw;
+    font-weight: bold;
+    margin: 0px;
+    text-align: right;
+}
+
+.max-score {
+    margin: 0px;
+    text-align: right;
+}
+
+.again-btn {
+    margin-top: 120px;
+    padding: 22px 34px;
+    border: 0;
+    border-radius: 26px;
+    font-size: 70px;
+    font-weight: bold;
+    color: white;
+    background-image: linear-gradient(to top right, #ec4899, #eab308);
+    box-shadow: 5px 5px rgb(82 82 82);
+}
+
+.again-btn:hover {
+    background-image: linear-gradient(to top right, #be2e75, #c79a06);
+}
+
+.again-btn:hover .flip-text {
+    transform: rotateX(360deg);
+}
+
+.flip-text {
+    display: inline-block;
+    transition: transform 1.2s ease-in;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}

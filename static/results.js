@@ -13,5 +13,10 @@ if (totalScore >= 13800) {
     resultsTitle.innerHTML = 'Ģeogrāfijas iesācējs';
 }
 
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        window.location.href = '/';
+    }
+});
 
 scoreTxt.innerHTML = totalScore;

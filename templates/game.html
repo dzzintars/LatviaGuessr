@@ -3,7 +3,7 @@
 
 {% block content%}
 <header class="header">
-    <h1 class="game-title">Latvia<span style="color: rgb(56, 190, 248);">Guessr</span></h1>
+    <a href="/" class="title-link"><h1 class="game-title">Latvia<span style="color: rgb(56, 190, 248);">Guessr</span></h1></a>
     <div class="game-stats">
         <p class="stat-para">Raunds <span class="round">0</span>/3</p>
         <p class="stat-para">Punkti <span class="score">0</span></p>
@@ -13,7 +13,7 @@
     <div class="game-content">
         <img class='game-img' src="{{ url_for('static', filename='images/cities/' ~ cities[id]['picture']) }}" alt="">
         <div class="guess-box">
-            <input type="text" class="city-input" placeholder="Mini pilsētu">
+            <input type="text" class="city-input" placeholder="Mini pilsētu" autofocus>
             <div class="table">
                 <div class="guess-header">
                     <div style="border-right: solid 2px gray;">Minējums</div>
