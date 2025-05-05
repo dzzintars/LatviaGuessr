@@ -220,7 +220,7 @@ body {
 .guess-score-box {
     position: fixed;
     display: flex;
-    height: 220px;
+    height: 160px;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -233,7 +233,7 @@ body {
 }
 
 .total-score-container {
-    font-size: 70px;
+    font-size: 50px;
     margin-top: 10px;
     color: #64748b;
     font-weight: bold;
@@ -241,14 +241,13 @@ body {
 
 .correct-score {
     margin-left: 90px;
-    font-size: 50;
     color: black;
 }
 
 .round-button {
     background-image: linear-gradient(to top right, #ec4899, #eab308);
     padding: 16px 40px;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     color: white;
     border-radius: 25px;

@@ -19,12 +19,13 @@ def game():
         """
         SELECT cities.id, city, picture, regions.region_name, counties.county_name, coordinates, population, description FROM cities 
         INNER JOIN regions ON cities.region_id = regions.id
-        INNER JOIN counties ON cities.county_id = counties.id;
+        INNER JOIN counties ON cities.county_id = counties.id
+        INNER JOIN descriptions ON cities.description_id = descriptions.id;
         """
     ).fetchall()
     cities = [dict(row) for row in rows]
     conn.close()
-    return render_template("game.html", cities = cities, id=random.randrange(0, 5))
+    return render_template("game.html", cities = cities, id=random.randrange(0, 22))
     
 @app.route("/correctGuess")
 def correct():

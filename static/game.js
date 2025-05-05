@@ -24,7 +24,7 @@ input.addEventListener('keypress', function (e) {
             guessCountText.innerHTML = 5 - guessCount;
             input.value = '';
         } else {
-            console.log('nav pilsēta tāda')
+            alert('Datubāzē nav šāda pilsēta')
         }
     }
 });
@@ -37,7 +37,7 @@ function addRow(guess_id) {
     let [x1, y1] = cities[ansId]['coordinates'].split(', ').map(Number);
     let [x2, y2] = cities[guess_id]['coordinates'].split(', ').map(Number);
     let distance = Math.round(getDistance(x1,y1,x2,y2), 0) + ' km';
-   
+    
     if (guess_id === ansId) {
         totalScore += roundScore
         saveAfterGuess();
