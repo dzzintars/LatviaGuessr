@@ -10,6 +10,7 @@ let roundCount = Number(localStorage.getItem('roundCount'));
 let guessCount = 0;
 let roundScore = 5000;
 
+
 scoreText.innerHTML = totalScore;
 roundText.innerHTML = roundCount;
 
@@ -17,7 +18,6 @@ input.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         const name = input.value.trim().toLowerCase();
         const city = cities.find(c => c.city.toLowerCase() === name);
-
         if (city) {
             guessCount++;
             addRow(city.id - 1);
@@ -36,7 +36,7 @@ function addRow(guess_id) {
     let populationSymbol = '';
     let [x1, y1] = cities[ansId]['coordinates'].split(', ').map(Number);
     let [x2, y2] = cities[guess_id]['coordinates'].split(', ').map(Number);
-    let distance = Math.round(getDistance(x1,y1,x2,y2), 0) + ' km';
+    let distance = Math.round(getDistance(x1,y1,x2,y2), 0);
     
     if (guess_id === ansId) {
         totalScore += roundScore
@@ -51,6 +51,14 @@ function addRow(guess_id) {
         saveAfterGuess();
     }
 
+    let distEmoji = ''
+    if (distance < 40){
+        distEmoji='🔥☀️';
+    } else if (distance <= 120){
+        distEmoji ='♨️';
+    } else if ( distance > 120){
+        distEmoji='🧊❄️';
+    }
 
     if (cities[guess_id]['region_name'] === cities[ansId]['region_name']) {
         regionClass = 'correct-region'
@@ -58,6 +66,7 @@ function addRow(guess_id) {
     if (cities[guess_id]['county_name'] === cities[ansId]['county_name']) {
         countyClass = 'correct-county'
     }
+
     if (cities[guess_id]['population'] > cities[ansId]['population']) {
         populationSymbol = '🡻'
     } else if (cities[guess_id]['population'] < cities[ansId]['population']) {
@@ -71,7 +80,7 @@ function addRow(guess_id) {
             <div class='${regionClass}'>${cities[guess_id]['region_name']}</div>
             <div class='${countyClass}'>${cities[guess_id]['county_name']}</div>
             <div>${cities[guess_id]['population']} ${populationSymbol}</div>
-            <div>${distance}</div>
+            <div>${distance} km ${distEmoji}</div>
         `;
     document.querySelector(".guesses-table").prepend(newRow);
 }

@@ -18,7 +18,7 @@ body {
 }
 
 .main-title {
-    font-size: 150px;
+    font-size: 8vw;
     margin: 60px;
     font-weight: 800;
 }
@@ -28,10 +28,10 @@ body {
     box-shadow: 5px 5px rgb(82 82 82);
     border-radius: 26px;
     width: 480px;
-    font-size: 70px;
+    font-size: 4vw;
     font-weight: 700;
     color: white;
-    padding: 18px 50px;
+    padding: 18px 18px;
 }
 
 .play-btn:hover {

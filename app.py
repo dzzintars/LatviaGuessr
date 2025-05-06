@@ -25,7 +25,7 @@ def game():
     ).fetchall()
     cities = [dict(row) for row in rows]
     conn.close()
-    return render_template("game.html", cities = cities, id=random.randrange(0, 22))
+    return render_template("game.html", cities = cities, id=random.randrange(0, 24))
     
 @app.route("/correctGuess")
 def correct():
