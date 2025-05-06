@@ -3,9 +3,7 @@ from pathlib import Path
 import sqlite3
 import random;
 
-
 app = Flask(__name__)
-
 
 @app.route("/")
 def index():
@@ -34,26 +32,6 @@ def correct():
 @app.route("/results")
 def results():
     return render_template("results.html")
-
-
-
-
-# @app.route("/products/<product_id>")
-# def products_show(product_id):
-#     conn = get_db_connection()
-#     product = conn.execute(
-#         "SELECT * FROM products WHERE id = ?",
-#         (product_id,),
-#     ).fetchone()
-#     conn.close()
-   
-#     return render_template("products_show.html", product=product)
-
-
-# @app.route("/par-mums")
-# def parMums():
-#     return render_template("par-mums.html")
-
 
 def get_db_connection():
     db = Path(__file__).parent / "cities.db"
